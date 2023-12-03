@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE CALCULATOR | WEB-DEV MIDARSHA</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .calculator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+button{
+    width: 65px;
+    height: 60px;
+    margin: 4px;
+    font-size: 30px;
+    border-radius: 70px;
+    border: none;
+    color: rgb(68, 68, 68);
+}
+input{
+    border: none;
+    width: 300px;
+    height: 80px;
+    font-size: 50px;
+    padding: 10px;
+    text-align: right;
+    background-color: rgb(255, 252, 168);
+    color: rgb(51, 39, 0) ;
+}
+.equal{
+width: 142px;
+background-color: rgb(255, 196, 0);
+}
+.buttons{
+    margin-top: 30px;
+
+}
+body{
+    background-image: url(maths.jpg);
+    
+}
+.calculator{
+    text-align: center;
+    width: 370px;
+    background-color: rgb(32, 28, 0);
+    padding: 30px 0px;
+    border-radius: 20px;
+}
+.char{
+    background-color: rgb(255, 196, 0) ;
+}
+.cc{
+    background-color: rgb(255, 216, 87);
+}
+
+</style>
+<body>
+    <div class="calculator-container">
+    <div class="calculator">
+        <input type="text" id="display">
+        <div class="buttons">
+            <button onclick="clearDisplay('C')" class="cc">C</button>
+            <button onclick="appendChar('7')">7</button>       
+            <button onclick="appendChar('8')">8</button>
+            <button onclick="appendChar('9')">9</button> <br>
+            <button onclick="appendChar('+')" class="char">+</button>
+            <button onclick="appendChar('4')">4</button>
+            <button onclick="appendChar('5')">5</button>
+            <button onclick="appendChar('6')">6</button> <br>
+            <button onclick="appendChar('*')" class="char">*</button>
+            <button onclick="appendChar('1')">1</button>
+            <button onclick="appendChar('2')">2</button>
+            <button onclick="appendChar('3')">3</button> <br>
+            <button onclick="appendChar('/')" class="char">/</button>
+            <button onclick="appendChar('0')">0</button>
+            <button onclick="calculate('=')" class="equal">=</button>
+        </div>
+    </div>
+</div>
+    <script>
+           function clearDisplay() {
+  document.getElementById('display').value = '';
+}
+
+function appendChar(value) {
+  document.getElementById('display').value += value;
+}
+
+function calculate() {
+  try {
+    document.getElementById('display').value = eval(document.getElementById('display').value);
+  } catch (error) {
+    document.getElementById('display').value = 'Error';
+  }
+}
+
+    </script>
+</body>
+</html>
